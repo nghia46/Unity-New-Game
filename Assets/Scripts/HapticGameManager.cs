@@ -36,6 +36,14 @@ public class HapticGameManager : MonoBehaviour
             hapticCoroutine = StartCoroutine(StopHapticAfterTime(duration));
         }
     }
+    public void PlayQuickHaptic()
+    {
+        if (Gamepad.current != null)
+        {
+            Gamepad.current.SetMotorSpeeds(0.5f, 0.5f);
+            StartCoroutine(StopHapticAfterTime(0.1f));
+        }
+    }
 
     private IEnumerator StopHapticAfterTime(float duration)
     {

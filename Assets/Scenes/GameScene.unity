@@ -350,6 +350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1946566807}
   - component: {fileID: 1946566806}
+  - component: {fileID: 1946566808}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -384,6 +385,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1946566808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946566805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6293b5f764fb3e140bb70344a0b34bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: ec76eeefd941ad34cbf7684a8516c8e7, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1946566806}
+        m_TargetAssemblyTypeName: HapticGameManager, Assembly-CSharp
+        m_MethodName: PlayQuickHaptic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2058702541
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 30ec061283218704eb624171e3b39574, type: 2}
   moveSpeed: 5
+  onPlayerAttack: {fileID: 11400000, guid: ec76eeefd941ad34cbf7684a8516c8e7, type: 2}
 --- !u!212 &2058702543
 SpriteRenderer:
   m_ObjectHideFlags: 0
