@@ -7,6 +7,7 @@ public class InputReader : ScriptableObject, InputSystem_Actions.IPlayerActions,
 {
     public event UnityAction<Vector2> MoveEvent;
     public event UnityAction OnClickEvent;
+    public event UnityAction OnJumpEvent;
     private InputSystem_Actions inputActions;
     private void OnEnable()
     {
@@ -63,7 +64,10 @@ public class InputReader : ScriptableObject, InputSystem_Actions.IPlayerActions,
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        //throw new System.NotImplementedException();
+        if (context.phase == InputActionPhase.Performed)
+        {
+            OnJumpEvent?.Invoke();
+        }
     }
 
     public void OnLook(InputAction.CallbackContext context)
